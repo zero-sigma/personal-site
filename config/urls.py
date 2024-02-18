@@ -16,7 +16,7 @@ admin_url = os.getenv('DJANGO_ADMIN_URL', 'admin/')
 
 urlpatterns = [
     path('', include('core.urls', namespace='core')),
-    path('blog/', TemplateView.as_view(template_name="pages/blog.html"), name='blog'),
+    path('blog/', include('blog.urls', namespace='blog')),
     path('projects/', TemplateView.as_view(template_name="pages/projects.html"), name='projects'),
     path('snippets/', TemplateView.as_view(template_name="pages/snippets.html"), name='snippets'),
     path('contact/', TemplateView.as_view(template_name="pages/contact.html"), name='contact'),

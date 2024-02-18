@@ -1,9 +1,10 @@
 from django.urls import path, include
-from django.views.generic.base import TemplateView
-from django.views.generic.base import RedirectView
+
+from . import views
 
 app_name = "blog"
 
 urlpatterns = [
-    # path('', TemplateView.as_view(template_name="pages/home.html"), name='home'),
+    path('', views.post_list, name='post_list'),
+    path('<slug:post>/', views.post_detail, name='post_detail'),
 ]
