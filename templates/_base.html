@@ -12,19 +12,28 @@
   <script defer data-domain="trevordm.com" src="https://plausible.io/js/script.js"></script>
   
   <!-- Unpoly CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/unpoly/unpoly.min.css">
+  <!-- <link rel="stylesheet" href="https://unpkg.com/unpoly/unpoly.min.css"> -->
 
   <!-- Unpoly JavaScript -->
-  <script src="https://unpkg.com/unpoly/unpoly.min.js"></script>
+  <!-- <script src="https://unpkg.com/unpoly/unpoly.min.js"></script> -->
+
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
 
 <body>
-  {% block content %}
-  {% endblock content %}
+  <div>
+    {% include './partials/_navbar.html' %}
+  </div>
+
+  <div class="content">
+    {% block content %}
+    {% endblock content %}
+  </div>
+
   <script>
-    up.on('click', '.sidenav a', function(event, element) {
-        up.follow(element.href, { history: true });
-        event.preventDefault();
+    up.on('click', '.navbar a', function(event, element) {
+      up.follow(element.href, { history: true });
+      event.preventDefault();
     });
   </script>
 </body>

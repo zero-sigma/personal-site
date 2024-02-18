@@ -1,9 +1,8 @@
-<nav up-nav class="flex-1 p-4">
-  <a href="{% url 'app:projects' %}" class="nav-link" up-target=".main" up-transition="ease" up-follow>My Projects</a>
-  <a href="{% url 'app:locations' %}" class="nav-link" up-target=".main" up-transition="ease" up-follow>Locations</a>
-  <a href="{% url 'app:characters' %}" class="nav-link" up-target=".main" up-transition="ease" up-follow>Characters</a>
-  <a href="{% url 'app:items' %}" class="nav-link" up-target=".main" up-transition="ease" up-follow>Items</a>
-  <a href="#" class="nav-link" up-target=".main" up-transition="ease" up-follow>Assets</a>
-  <a href="{% url 'app:cartographer' %}" class="nav-link" up-target=".main" up-transition="ease" up-follow>Cartographer</a>
-  <a href="{% url 'app:help' %}" class="nav-link" up-target=".main" up-transition="ease" up-follow>Help</a>
+<nav up-nav class="navbar">
+  <a href="/" class="nav-link up-current" up-target=".content" up-transition="ease" up-follow>Home</a>
+  <a href="/blog" class="nav-link" up-target=".content" up-transition="ease" up-follow>Blog</a>
+  <a href="/projects" class="nav-link" up-target=".content" up-transition="ease" up-follow>Projects</a>
+  <a href="/snippets" class="nav-link" up-target=".content" up-transition="ease" up-follow>Snippets</a>
+  <a href="/contact" class="nav-link" up-target=".content" up-transition="ease" up-follow>Contact</a>
+  <a href="/resume" class="nav-link" up-target=".content" up-transition="ease" up-follow>Resume</a>
 </nav>

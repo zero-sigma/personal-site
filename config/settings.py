@@ -14,7 +14,8 @@ load_dotenv()
 
 # SECURITY SETTINGS
 SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-t$5dri)78zag6^zl@^r8!_-(c*ikkfv=#k*7$$^qh#or^8$k=e')
-DEBUG = os.getenv('DEBUG', 'False') == 'True'
+# DEBUG = os.getenv('DEBUG', 'False')
+DEBUG=True
 ALLOWED_HOSTS = ['*']
 
 # EMAIL CONFIGURATION
@@ -39,10 +40,10 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
-    'core',
-    'blog',
-    'projects',
-    'snippets',
+    'core.apps.CoreConfig',
+    'blog.apps.BlogConfig',
+    'projects.apps.ProjectsConfig',
+    'snippets.apps.SnippetsConfig',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -118,16 +119,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-
-
-# COMPRESSOR SETTINGS
-COMPRESS_ENABLED = True
-COMPRESS_ROOT = BASE_DIR / 'static'
-STATICFILES_FINDERS = (
-    # 'compressor.finders.CompressorFinder',
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-)
 
 # OTHER SETTINGS
 ROOT_URLCONF = 'config.urls'
